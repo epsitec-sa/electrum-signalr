@@ -1,0 +1,23 @@
+{
+  "name": "electrum-signalr",
+  "version": "1.0.0",
+  "description": "SignalR wrapper which hides the SignalR and jQuery dependencies.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epsitec-sa/electrum-signalr.git"
+  },
+  "author": "Epsitec SA",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epsitec-sa/electrum-signalr/issues"
+  },
+  "homepage": "https://github.com/epsitec-sa/electrum-signalr#readme",
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "ms-signalr-client": "^2.2.2"
+  }
+}
