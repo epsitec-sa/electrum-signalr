@@ -7,4 +7,8 @@ window.jQuery = jQuery;
 
 var signalR = require ('ms-signalr-client');
 
-module.exports = signalR;
+module.exports = {
+  signalR: signalR,
+  signalRConnection: jQuery.connection,
+  jQuery: jQuery
+};
