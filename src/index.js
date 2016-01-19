@@ -5,10 +5,12 @@ var jQuery = require ('jquery');
 window.$ = jQuery;
 window.jQuery = jQuery;
 
-var signalR = require ('ms-signalr-client');
+require ('ms-signalr-client');
+
+
 
 module.exports = {
-  signalR: signalR,
-  signalRConnection: jQuery.connection,
-  jQuery: jQuery
+  connect: function connect (url) {
+    return jQuery.connection (url);
+  }
 };
