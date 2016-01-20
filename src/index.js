@@ -11,20 +11,19 @@ require ('ms-signalr-client');
 
 export class HubLoader {
   constructor (hubName) {
-    this._connection = null;
     this._hubName = hubName;
   }
 
   get hubProxy () {
-    return this._connection[this.hubName];
+    return this.connection[this.hubName];
   }
 
   get connection () {
-    return this._connection;
+    return jQuery.connection;
   }
 
   get hub () {
-    return this._connection.hub;
+    return this.connection.hub;
   }
 
   load (hubUrl, ownUrl, ready) {
