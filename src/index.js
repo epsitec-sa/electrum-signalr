@@ -13,9 +13,13 @@ export class HubLoader {
   constructor (hubName) {
     this._hubName = hubName;
   }
+  
+  get hubName () {
+    return this._hubName;
+  }
 
   get hubProxy () {
-    return this.connection[this.hubName];
+    return this.connection[this._hubName];
   }
 
   get connection () {
