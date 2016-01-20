@@ -29,20 +29,26 @@ export class HubLoader {
   load (hubUrl, ownUrl, ready) {
     jQuery.getScript (hubUrl + '/hubs')
       .done ((script, textStatus) => {
-        this.configureHub (hubUrl, ownUrl, ready);
+        this.configureHub (hubUrl, ownUrl);
+        this.notifyReady (ready);
       })
       .fail ((jqxhr, settings, exception) => {
         /* handle error */
       });
   }
 
-  configureHub (hubUrl, ownUrl, ready) {
-    let hub = this.hub;
+  configureHub (hubUrl, ownUrl) {
+    const hub = this.hub;
     hub.error (err => this.onError (err));
     hub.logging = false;
     hub.url = hubUrl;
     hub.qs = 'from=' + ownUrl;
-    ready (this);
+  }
+
+  notifyReady (ready) {
+    if (ready) {
+      ready (this);
+    }
   }
 
   start () {

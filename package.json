@@ -1,6 +1,6 @@
 {
   "name": "electrum-signalr",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Electrum SignalR implements a Hub Loader.",
   "main": "lib/index.js",
   "scripts": {
