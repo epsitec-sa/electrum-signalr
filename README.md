@@ -35,6 +35,7 @@ The `HubLoader` class defines following public methods:
 The `HubLoader` class defines following public getters:
 
 * `hub` &rarr; the client-side hub instance.
+* `hubName` &rarr; the name of the hub, as provided to the constructor.
 * `hubProxy` &rarr; the proxy to the server hub.
 * `connection` &rarr; the SignalR connection.
 

@@ -13,7 +13,7 @@ export class HubLoader {
   constructor (hubName) {
     this._hubName = hubName;
   }
-  
+
   get hubName () {
     return this._hubName;
   }
@@ -32,11 +32,11 @@ export class HubLoader {
 
   load (hubUrl, ownUrl, ready) {
     jQuery.getScript (hubUrl + '/hubs')
-      .done ((script, textStatus) => {
+      .done ((script, textStatus) => { /*jshint unused:false*/
         this.configureHub (hubUrl, ownUrl);
         this.notifyReady (ready);
       })
-      .fail ((jqxhr, settings, exception) => {
+      .fail ((jqxhr, settings, exception) => { /*jshint unused:false*/
         /* handle error */
       });
   }
