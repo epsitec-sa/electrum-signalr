@@ -9,6 +9,10 @@ require ('ms-signalr-client');
 
 /******************************************************************************/
 
+import {setupProxy} from './utils.js';
+
+/******************************************************************************/
+
 export class HubLoader {
   constructor (hubName) {
     this._hubName = hubName;
@@ -53,6 +57,10 @@ export class HubLoader {
     if (ready) {
       ready (this);
     }
+  }
+
+  setupProxy (handler) {
+    setupProxy (this.proxy.client, () => handler);
   }
 
   start () {
