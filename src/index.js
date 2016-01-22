@@ -60,7 +60,7 @@ export class HubLoader {
   }
 
   setupProxy (handler) {
-    setupProxy (this.proxy.client, () => handler);
+    setupProxy (this.hubProxy, () => handler);
   }
 
   start () {
