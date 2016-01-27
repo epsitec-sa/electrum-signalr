@@ -6,7 +6,7 @@ import {getInstanceMethodNames} from 'electrum-utils';
 
 export function inject (client, instance) {
 
-  const names = getInstanceMethodNames (instance);
+  const names = getInstanceMethodNames (instance, Object.prototype);
   const len = names.length;
 
   for (let i = 0; i < len; ++i) {
