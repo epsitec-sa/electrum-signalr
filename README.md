@@ -30,7 +30,8 @@ The `HubLoader` class defines following public methods:
 * `start ()` &rarr; start the communication between the proxy and the
   distant hub; this will establish the SignalR communication channel.
 * `setupProxy (handler)` &rarr; configure the proxy by injecting it the
-  handler's methods.
+  handler's methods. Methods which start with an underscore (`_`) will
+  not be injected.
 
 ## Getters
 

@@ -1,16 +1,19 @@
 'use strict';
 
+import {getInstanceMethodNames} from 'electrum-utils';
+
 /******************************************************************************/
 
-export function getMethodNames (instance) {
-  const type  = Object.getPrototypeOf (instance);
-  const names = Object.getOwnPropertyNames (type);
-  return names.filter (name => name !== 'constructor' && instance[name] instanceof Function);
-}
-
 export function inject (client, instance) {
-  for (let name of getMethodNames (instance)) {
-    client[name] = instance[name].bind (instance);
+
+  const names = getInstanceMethodNames (instance);
+  const len = names.length;
+
+  for (let i = 0; i < len; ++i) {
+    const name = names[i];
+    if (!name.startsWith ('_')) {
+      client[name] = instance[name].bind (instance);
+    }
   }
 }
 
