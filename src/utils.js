@@ -20,7 +20,7 @@ export function inject (client, instance) {
 /******************************************************************************/
 
 export function setupProxy (proxy, factory) {
-  inject (proxy.client, factory ());
+  inject (proxy.client, factory (proxy));
 }
 
 /******************************************************************************/

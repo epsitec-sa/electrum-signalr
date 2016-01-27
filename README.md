@@ -29,9 +29,11 @@ The `HubLoader` class defines following public methods:
   ready for use. Typically, `ready(loader)` should call `loader.start()`.
 * `start ()` &rarr; start the communication between the proxy and the
   distant hub; this will establish the SignalR communication channel.
-* `setupProxy (handler)` &rarr; configure the proxy by injecting it the
-  handler's methods. Methods which start with an underscore (`_`) will
-  not be injected.
+* `setupProxy (factory)` &rarr; configure the proxy by injecting it the
+  handler's methods; the handler is returned by the factory. Methods
+  which start with an underscore (`_`) will not be injected.
+
+Note: `setupProxy (factory)` takes a `proxy => handler` callback as argument.
 
 ## Getters
 
