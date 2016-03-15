@@ -26,6 +26,6 @@
   "devDependencies": {
     "babel-env": "^1.1.0",
     "generic-js-env": "^1.1.0",
-    "rimraf": "^2.5.0"
+    "rimraf": "^2.5.2"
   }
 }
